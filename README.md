@@ -7,7 +7,9 @@ A few key points first:
 Ordinarily you could simply deploy it locally by cloning this repo and run: R -e "shiny::runApp('yelp')", but it uses 
 the csv which is outside of R.
 
-After that though, you may either run the above command or enter R yourself, and enter: runApp('~/yelp')
+Also, the global.R file is really just another processing file to demo how yelp_ads_new.csv was derived. When running the project, it's recommended you remove it from the project directory.
+
+After doing this, you may either run the above command or enter R yourself, and enter: runApp('~/yelp')
 
 You'll find this app running at http://localhost:8100/
   

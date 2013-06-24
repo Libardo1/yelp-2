@@ -21,8 +21,9 @@ shinyUI(pageWithSidebar(
     
     checkboxInput('jitter', 'Jitter'),
     checkboxInput('smooth', 'Smooth'),
+    checkboxInput('fill', 'Fill (for hist/boxplot/density'),
 
-    selectInput('plot.type','Plot Type:', c('Box'='boxplot','Scatter'='point','Histogram'='hist'),
+    selectInput('plot.type','Plot Type:', c('Box'='boxplot','Scatter'='point','Histogram'='hist', 'Density'='dens'),
       selected='Scatter'),
     
     submitButton('Update Settings:')

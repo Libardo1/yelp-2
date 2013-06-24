@@ -20,11 +20,23 @@ shinyServer(function(input, output) {
     if (input$plot.type == 'point')
       p <- ggplot(dataset(), aes_string(x=input$x, y=input$y)) + geom_point()
     
-    else if (input$plot.type == 'boxplot')
+    else if (input$plot.type == 'boxplot' & !input$fill)
       p <- ggplot(dataset(), aes_string(x=input$x, y=input$y)) + geom_boxplot()
+   
+    else if (input$plot.type == 'boxplot' & input$fill)
+      p <- ggplot(dataset(), aes_string(x=input$x, y=input$y, fill=input$color)) + geom_boxplot()
 
-    else if (input$plot.type == 'hist')
+    else if (input$plot.type == 'hist' & input$fill)
+      p <- ggplot(dataset(), aes_string(x=input$x, fill=input$color)) + geom_histogram()
+    
+    else if (input$plot.type == 'dens' & input$fill)
+      p <- ggplot(dataset(), aes_string(x=input$x, fill=input$color)) + geom_density()
+    
+    else if (input$plot.type == 'hist' & !input$fill)
       p <- ggplot(dataset(), aes_string(x=input$x)) + geom_histogram()
+    
+    else if (input$plot.type == 'dens' & !input$fill)
+      p <- ggplot(dataset(), aes_string(x=input$x)) + geom_density()
     
     if (input$color != 'None')
       p <- p + aes_string(color=input$color)
@@ -39,6 +51,6 @@ shinyServer(function(input, output) {
     print(p)
     
     
-  }, height=700)
+  }, height=600)
   
 })
