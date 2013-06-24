@@ -1,5 +1,5 @@
 #this is really actually just to show you what I did to rename the categories/import, rewrite, etc
-yelp_ads<-read.csv('/Users/jfan/Downloads/Ad Targeting Test/pm_ad_stats.csv') #basic import into R
+yelp_ads<-read.csv('~/pm_ad_stats.csv') #basic import into R
 names(yelp_ads)<-c('business_name','impressions','ad_clicks','cpc','ctr')
 #classifying based on ctr
 #PRE=PROCESSING SECTION
