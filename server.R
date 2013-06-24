@@ -1,7 +1,7 @@
 library(shiny)
 library(ggplot2)
  
-yelp_ads<-read.csv('/Users/jfan/Documents/Programming/R/shiny/yelp4.0/yelp_ads_new.csv')
+yelp_ads<-read.csv('~/yelp_ads_new.csv')
 
 shinyServer(function(input, output) {
  
@@ -24,7 +24,7 @@ shinyServer(function(input, output) {
       p <- ggplot(dataset(), aes_string(x=input$x, y=input$y)) + geom_boxplot()
 
     else if (input$plot.type == 'hist')
-      p <- ggplot(dataset(), aes_string(x=input$x, y=input$y)) + geom_histogram()
+      p <- ggplot(dataset(), aes_string(x=input$x)) + geom_histogram()
     
     if (input$color != 'None')
       p <- p + aes_string(color=input$color)

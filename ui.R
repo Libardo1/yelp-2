@@ -1,7 +1,7 @@
 library(shiny)
 library(ggplot2)
 
-yelp_ads<-read.csv('/Users/jfan/Documents/Programming/R/shiny/yelp4.0/yelp_ads_new.csv')
+yelp_ads<-read.csv('~/yelp_ads_new.csv')
 dataset <- yelp_ads
 holder<-names(dataset)
 shinyUI(pageWithSidebar(
